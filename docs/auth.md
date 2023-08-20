@@ -88,7 +88,7 @@ DELETE /api/auth/logout
 
 ```json
 {
-  "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291"
+  "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
 }
 ```
 
