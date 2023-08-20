@@ -1,19 +1,19 @@
 # User API Specification
 
-## Update User Data
-
-### Endpoint
-
-```http
-PATCH /api/users/current
-```
-
 ### Headers
 
 ```json
 {
   "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
 }
+```
+
+## Update User Data
+
+### Endpoint
+
+```http
+PATCH /api/users/current
 ```
 
 ### Request Body
@@ -52,14 +52,6 @@ PATCH /api/users/current
 
 ```http
 GET /api/users/current
-```
-
-### Headers
-
-```json
-{
-  "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
-}
 ```
 
 ### Response

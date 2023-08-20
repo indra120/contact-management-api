@@ -1,19 +1,19 @@
 # Contact API Specification
 
-## Create new Contact
-
-### Endpoint
-
-```http
-POST /api/contacts
-```
-
 ### Headers
 
 ```json
 {
   "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
 }
+```
+
+## Create new Contact
+
+### Endpoint
+
+```http
+POST /api/contacts
 ```
 
 ### Request Body
@@ -59,14 +59,6 @@ POST /api/contacts
 GET /api/contacts/:id
 ```
 
-### Headers
-
-```json
-{
-  "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
-}
-```
-
 ### Response
 
 #### Success
@@ -97,14 +89,6 @@ GET /api/contacts/:id
 
 ```http
 PUT /api/contacts/:id
-```
-
-### Headers
-
-```json
-{
-  "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
-}
 ```
 
 ### Request Body
@@ -148,14 +132,6 @@ PUT /api/contacts/:id
 
 ```http
 GET /api/contacts
-```
-
-### Headers
-
-```json
-{
-  "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
-}
 ```
 
 ### Query params
@@ -210,14 +186,6 @@ GET /api/contacts
 
 ```http
 DELETE /api/contacts/:id
-```
-
-### Headers
-
-```json
-{
-  "Authorization": "19dfc22d-4545-45a9-9b36-ec0fc3fee291" // token
-}
 ```
 
 ### Response
