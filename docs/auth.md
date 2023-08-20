@@ -2,13 +2,13 @@
 
 ## Register
 
-### Endpoint:
+### Endpoint
 
 ```http
 POST /api/auth/register
 ```
 
-### Request Body:
+### Request Body
 
 ```json
 {
@@ -20,7 +20,7 @@ POST /api/auth/register
 
 ### Response
 
-#### Success :
+#### Success
 
 ```json
 {
@@ -31,7 +31,7 @@ POST /api/auth/register
 }
 ```
 
-#### Error :
+#### Error
 
 ```json
 {
@@ -41,13 +41,13 @@ POST /api/auth/register
 
 ## Login
 
-### Endpoint:
+### Endpoint
 
 ```http
 POST /api/auth/login
 ```
 
-### Request Body:
+### Request Body
 
 ```json
 {
@@ -58,7 +58,7 @@ POST /api/auth/login
 
 ### Response
 
-#### Success :
+#### Success
 
 ```json
 {
@@ -68,7 +68,7 @@ POST /api/auth/login
 }
 ```
 
-#### Error :
+#### Error
 
 ```json
 {
@@ -78,13 +78,13 @@ POST /api/auth/login
 
 ## Logout
 
-### Endpoint:
+### Endpoint
 
 ```http
 DELETE /api/auth/logout
 ```
 
-### Headers:
+### Headers
 
 ```json
 {
@@ -94,7 +94,7 @@ DELETE /api/auth/logout
 
 ### Response
 
-#### Success :
+#### Success
 
 ```json
 {
@@ -102,7 +102,7 @@ DELETE /api/auth/logout
 }
 ```
 
-#### Error :
+#### Error
 
 ```json
 {

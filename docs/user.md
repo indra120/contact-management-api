@@ -2,13 +2,13 @@
 
 ## Update User Data
 
-### Endpoint:
+### Endpoint
 
 ```http
 PATCH /api/users/current
 ```
 
-### Headers:
+### Headers
 
 ```json
 {
@@ -16,7 +16,7 @@ PATCH /api/users/current
 }
 ```
 
-### Request Body:
+### Request Body
 
 ```json
 {
@@ -27,7 +27,7 @@ PATCH /api/users/current
 
 ### Response
 
-#### Success :
+#### Success
 
 ```json
 {
@@ -38,7 +38,7 @@ PATCH /api/users/current
 }
 ```
 
-#### Error :
+#### Error
 
 ```json
 {
@@ -48,13 +48,13 @@ PATCH /api/users/current
 
 ## Get User Data
 
-### Endpoint:
+### Endpoint
 
 ```http
 GET /api/users/current
 ```
 
-### Headers:
+### Headers
 
 ```json
 {
@@ -64,7 +64,7 @@ GET /api/users/current
 
 ### Response
 
-#### Success:
+#### Success
 
 ```json
 {
@@ -75,7 +75,7 @@ GET /api/users/current
 }
 ```
 
-#### Error :
+#### Error
 
 ```json
 {
