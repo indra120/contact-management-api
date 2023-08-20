@@ -1,0 +1,12 @@
+{
+  "name": "express-contact-management-api",
+  "version": "0.1.0",
+  "description": "a simple contact management app RESTful API created with expressjs",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "indra120",
+  "license": "ISC"
+}
