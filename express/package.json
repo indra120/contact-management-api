@@ -2,16 +2,25 @@
   "name": "express-contact-management-api",
   "version": "0.1.0",
   "description": "a simple contact management app RESTful API created with expressjs",
-  "main": "src/app.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "jest -i",
-    "start": "node src/app.js"
+    "start": "node src/index.js"
   },
   "jest": {
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
     }
+  },
+  "imports": {
+    "#app": "./src/app.js",
+    "#controller/*": "./src/controller/*.js",
+    "#lib/*": "./src/lib/*.js",
+    "#middleware/*": "./src/middleware/*.js",
+    "#routes/*": "./src/routes/*.js",
+    "#service/*": "./src/service/*.js",
+    "#validation/*": "./src/validation/*.js"
   },
   "keywords": [],
   "author": "Indra Pranata",
