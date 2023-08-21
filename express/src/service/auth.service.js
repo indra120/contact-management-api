@@ -13,7 +13,7 @@ export async function register(request) {
   })
 
   if (countUser === 1) {
-    throw new ErrorResponse(400, 'Username already exists')
+    throw new ErrorResponse(400, 'Username already exists!')
   }
 
   user.password = await hash(user.password, 10)
