@@ -14,7 +14,7 @@
     }
   },
   "imports": {
-    "#lib/*": "./src/lib/*"
+    "#*": "./src/*"
   },
   "keywords": [],
   "author": "Indra Pranata",
