@@ -2,7 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "#*": ["./src/*"]
+      "#app": ["./src/app.js"],
+      "#controller/*": ["./src/controller/*.js"],
+      "#lib/*": ["./src/lib/*.js"],
+      "#middleware/*": ["./src/middleware/*.js"],
+      "#routes/*": ["./src/routes/*.js"],
+      "#service/*": ["./src/service/*.js"],
+      "#validation/*": ["./src/validation/*.js"]
     }
   }
 }
