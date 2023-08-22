@@ -1,6 +1,7 @@
 import { db } from '#lib/db'
+import { validate } from '#lib/validation'
 import { ErrorResponse } from '#lib/error-response'
-import { registerValidation } from '#validation/auth.validation'
+import { registerValidation } from '#validation/auth'
 import { hash } from 'bcrypt'
 
 export async function register(request) {

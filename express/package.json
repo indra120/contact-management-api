@@ -15,12 +15,12 @@
   },
   "imports": {
     "#app": "./src/app.js",
-    "#controller/*": "./src/controller/*.js",
+    "#controller/*": "./src/controller/*.controller.js",
     "#lib/*": "./src/lib/*.js",
-    "#middleware/*": "./src/middleware/*.js",
-    "#routes/*": "./src/routes/*.js",
-    "#service/*": "./src/service/*.js",
-    "#validation/*": "./src/validation/*.js"
+    "#middleware/*": "./src/middleware/*.middleware.js",
+    "#routes/*": "./src/routes/*.routes.js",
+    "#service/*": "./src/service/*.service.js",
+    "#validation/*": "./src/validation/*.validation.js"
   },
   "keywords": [],
   "author": "Indra Pranata",

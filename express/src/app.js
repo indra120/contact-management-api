@@ -1,11 +1,11 @@
-import { errorMiddleware } from '#middleware/error.middleware'
-import { publicRoutes } from '#routes/public.routes'
+import { errorMiddleware } from '#middleware/error'
+import { publicRoutes } from '#routes/public'
 import express from 'express'
 
 const app = express()
 
 app.use(express.json())
-app.use(errorMiddleware)
 app.use('/api/auth', publicRoutes)
+app.use(errorMiddleware)
 
 export { app }
