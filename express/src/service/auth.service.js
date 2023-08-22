@@ -3,6 +3,7 @@ import { validate } from '#lib/validation'
 import { ErrorResponse } from '#lib/error-response'
 import { loginValidation, registerValidation } from '#validation/auth'
 import { compare, hash } from 'bcrypt'
+import { v4 as uuid } from 'uuid'
 
 export async function register(request) {
   const user = validate(registerValidation, request)
