@@ -5,7 +5,7 @@ import express from 'express'
 const app = express()
 
 app.use(express.json())
-app.use(errorMiddleware)
 app.use('/api/auth', publicRoutes)
+app.use(errorMiddleware)
 
 export { app }
