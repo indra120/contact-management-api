@@ -13,7 +13,7 @@ export function validate(schema, request) {
 
   if (result.error) {
     throw new ErrorResponse(400, result.error.message)
-  } else {
-    return result.value
   }
+
+  return result.value
 }
