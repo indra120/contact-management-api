@@ -1,5 +1,5 @@
-import { errorMiddleware } from '#middleware/error.middleware'
-import { publicRoutes } from '#routes/public.routes'
+import { errorMiddleware } from '#middleware/error'
+import { publicRoutes } from '#routes/public'
 import express from 'express'
 
 const app = express()
