@@ -1,8 +1,9 @@
 import { db } from '#lib/db'
 import { validate } from '#lib/validation'
 import { ErrorResponse } from '#lib/error-response'
-import { registerValidation } from '#validation/auth'
-import { hash } from 'bcrypt'
+import { loginValidation, registerValidation } from '#validation/auth'
+import { compare, hash } from 'bcrypt'
+import { v4 as uuid } from 'uuid'
 
 export async function register(request) {
   const user = validate(registerValidation, request)
@@ -25,5 +26,28 @@ export async function register(request) {
       username: true,
       name: true,
     },
+  })
+}
+
+export async function login(request) {
+  const { username, password } = validate(loginValidation, request)
+
+  const existUser = await db.user.findUnique({
+    where: { username },
+    select: { username: true, password: true },
+  })
+  if (!existUser) {
+    throw new ErrorResponse(401, "User doesn't exist!")
+  }
+
+  const isPasswordCorrect = await compare(password, existUser.password)
+  if (!isPasswordCorrect) {
+    throw new ErrorResponse(401, 'Wrong password!')
+  }
+
+  return db.user.update({
+    where: { username },
+    data: { token: uuid().toString() },
+    select: { token: true },
   })
 }
