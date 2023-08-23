@@ -8,13 +8,13 @@ import { v4 as uuid } from 'uuid'
 export async function register(request) {
   const user = validate(registerValidation, request)
 
-  const countUser = await db.user.count({
+  const userCount = await db.user.count({
     where: {
       username: user.username,
     },
   })
 
-  if (countUser === 1) {
+  if (userCount) {
     throw new ErrorResponse(400, 'Username already exists!')
   }
 

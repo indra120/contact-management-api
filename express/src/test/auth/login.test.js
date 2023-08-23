@@ -20,10 +20,7 @@ describe(`POST ${endpoint}`, () => {
   })
 
   it("shouldn't login when request is invalid", async () => {
-    const res = await superTest.post(endpoint).send({
-      username: '',
-      password: '',
-    })
+    const res = await superTest.post(endpoint).send({})
     logger.info(res.body)
 
     expect(res.status).toBe(400)
