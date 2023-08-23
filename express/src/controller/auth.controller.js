@@ -17,3 +17,12 @@ export async function login(req, res, next) {
     next(e)
   }
 }
+
+export async function logout(req, res, next) {
+  try {
+    await service.logout(req.user.username)
+    res.status(200).json({ data: 'OK' })
+  } catch (e) {
+    next(e)
+  }
+}
