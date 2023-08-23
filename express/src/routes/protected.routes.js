@@ -8,3 +8,5 @@ router.use(authMiddleware)
 
 // User API
 router.use('/api/users', userRoutes)
+
+export { router as protectedRoutes }
