@@ -28,7 +28,7 @@ export async function update(request) {
   const userCount = await db.user.count({ where: { username } })
 
   if (!userCount) {
-    throw new ResponseError(404, 'user is not found')
+    throw new ErrorResponse(404, 'user is not found')
   }
 
   if (data.password) {

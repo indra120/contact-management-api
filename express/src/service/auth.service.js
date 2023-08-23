@@ -4,6 +4,7 @@ import { ErrorResponse } from '#lib/error-response'
 import { loginValidation, registerValidation } from '#validation/auth'
 import { compare, hash } from 'bcrypt'
 import { v4 as uuid } from 'uuid'
+import { getUserValidation } from '#validation/user'
 
 export async function register(request) {
   const user = validate(registerValidation, request)
@@ -49,5 +50,20 @@ export async function login(request) {
     where: { username },
     data: { token: uuid().toString() },
     select: { token: true },
+  })
+}
+
+export async function logout(username) {
+  username = validate(getUserValidation, username)
+
+  const user = await db.user.findUnique({ where: { username } })
+  if (!user) {
+    throw new ErrorResponse(404, 'user is not found')
+  }
+
+  return db.user.update({
+    where: { username },
+    data: { token: null },
+    select: { username: true },
   })
 }
