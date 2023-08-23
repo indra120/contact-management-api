@@ -16,6 +16,10 @@ export async function createTestUser() {
   })
 }
 
+export async function getTestUser() {
+  return db.user.findUnique({ where: { username: 'test' } })
+}
+
 export async function deleteTestUser() {
   await db.user.deleteMany({ where: { username: 'test' } })
 }

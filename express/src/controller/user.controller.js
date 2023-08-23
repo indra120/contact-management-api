@@ -11,7 +11,7 @@ export async function get(req, res, next) {
 
 export async function update(req, res, next) {
   try {
-    const request = Object.assign({ username: req.user.username }, req.body)
+    const request = Object.assign(req.body, { username: req.user.username })
     const data = await userService.update(request)
 
     res.status(200).json({ data })

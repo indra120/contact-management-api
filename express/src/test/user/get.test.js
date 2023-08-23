@@ -14,7 +14,7 @@ describe(`GET ${endpoint}`, () => {
     expect(res.body.data.name).toBe('test')
   })
 
-  it('should reject if token is invalid', async () => {
+  it('should reject when token is invalid', async () => {
     const res = await superTest.get(endpoint).set('Authorization', 'wrong')
 
     expect(res.status).toBe(401)
