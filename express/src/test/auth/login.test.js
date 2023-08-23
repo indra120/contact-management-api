@@ -1,12 +1,14 @@
 import { logger } from '#lib/logging'
-import { createTestUser, deleteTestUser, request } from './util'
+import { createTestUser, deleteTestUser, superTest } from '../util'
 
-describe('POST /api/auth/login', () => {
+const endpoint = '/api/auth/login'
+
+describe(`POST ${endpoint}`, () => {
   beforeEach(createTestUser)
   afterEach(deleteTestUser)
 
   it('should be login', async () => {
-    const res = await request('/login', {
+    const res = await superTest.post(endpoint).send({
       username: 'test',
       password: 'secret',
     })
@@ -18,7 +20,7 @@ describe('POST /api/auth/login', () => {
   })
 
   it("shouldn't login when request is invalid", async () => {
-    const res = await request('/login', {
+    const res = await superTest.post(endpoint).send({
       username: '',
       password: '',
     })
@@ -29,7 +31,7 @@ describe('POST /api/auth/login', () => {
   })
 
   it("shouldn't login when password is wrong", async () => {
-    const res = await request('/login', {
+    const res = await superTest.post(endpoint).send({
       username: 'test',
       password: 'wrong',
     })
@@ -40,7 +42,7 @@ describe('POST /api/auth/login', () => {
   })
 
   it("shouldn't login when user doesn\t exist", async () => {
-    const res = await request('/login', {
+    const res = await superTest.post(endpoint).send({
       username: 'wrong',
       password: 'wrong',
     })

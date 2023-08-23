@@ -3,9 +3,7 @@ import { db } from '#lib/db'
 import { hash } from 'bcrypt'
 import supertest from 'supertest'
 
-export async function request(endpoint, data) {
-  return supertest(app).post(`/api/auth${endpoint}`).send(data)
-}
+export const superTest = supertest(app)
 
 export async function createTestUser() {
   await db.user.create({

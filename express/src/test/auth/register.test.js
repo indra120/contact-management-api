@@ -1,11 +1,13 @@
 import { logger } from '#lib/logging'
-import { deleteTestUser, request } from './util'
+import { deleteTestUser, superTest } from '../util'
 
-describe(`POST /api/auth/register`, () => {
+const endpoint = '/api/auth/register'
+
+describe(`POST ${endpoint}`, () => {
   afterEach(deleteTestUser)
 
   it('should register new user', async () => {
-    const res = await request('/register', {
+    const res = await superTest.post(endpoint).send({
       username: 'test',
       name: 'test',
       password: 'secret',
@@ -18,10 +20,10 @@ describe(`POST /api/auth/register`, () => {
   })
 
   it('should reject when request is invalid', async () => {
-    const res = await request('/register', {
+    const res = await superTest.post(endpoint).send({
       username: '',
-      password: '',
       name: '',
+      password: '',
     })
     logger.info(res.body)
 
@@ -30,7 +32,7 @@ describe(`POST /api/auth/register`, () => {
   })
 
   it('should reject when usern already exist', async () => {
-    let res = await request('/register', {
+    let res = await superTest.post(endpoint).send({
       username: 'test',
       name: 'test',
       password: 'secret',
@@ -42,7 +44,7 @@ describe(`POST /api/auth/register`, () => {
     expect(res.body.data.name).toBe('test')
     expect(res.body.data.password).toBeUndefined()
 
-    res = await request('/register', {
+    res = await superTest.post(endpoint).send({
       username: 'test',
       name: 'test',
       password: 'secret',
