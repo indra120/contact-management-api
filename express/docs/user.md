@@ -8,6 +8,35 @@
 }
 ```
 
+## Get User Data
+
+### Endpoint
+
+```http
+GET /api/users/current
+```
+
+### Response
+
+#### Success
+
+```json
+{
+  "data": {
+    "username": "john_doe",
+    "name": "John Doe"
+  }
+}
+```
+
+#### Error
+
+```json
+{
+  "errors": "Unauthorized!"
+}
+```
+
 ## Update User Data
 
 ### Endpoint
@@ -43,34 +72,5 @@ PATCH /api/users/current
 ```json
 {
   "errors": "Name length max 100!"
-}
-```
-
-## Get User Data
-
-### Endpoint
-
-```http
-GET /api/users/current
-```
-
-### Response
-
-#### Success
-
-```json
-{
-  "data": {
-    "username": "john_doe",
-    "name": "John Doe"
-  }
-}
-```
-
-#### Error
-
-```json
-{
-  "errors": "Unauthorized!"
 }
 ```
