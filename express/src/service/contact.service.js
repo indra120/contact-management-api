@@ -7,7 +7,7 @@ export async function create(user, request) {
 
   data.username = user.username
 
-  return db.data.create({
+  return db.contact.create({
     data,
     select: {
       id: true,
