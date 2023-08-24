@@ -23,3 +23,7 @@ export async function getTestUser() {
 export async function deleteTestUser() {
   await db.user.deleteMany({ where: { username: 'test' } })
 }
+
+export async function deleteAllTestContacts() {
+  await db.contact.deleteMany({ where: { username: 'test' } })
+}
