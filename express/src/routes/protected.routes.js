@@ -7,9 +7,8 @@ const router = Router()
 
 router.use(authMiddleware)
 
-// Logout
 router.delete('/api/auth/logout', logout)
-// User API
 router.use('/api/users', userRoutes)
+router.use('/api/contacts')
 
 export { router as protectedRoutes }
